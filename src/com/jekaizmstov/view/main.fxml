@@ -89,42 +89,71 @@
                            <image>
                               <Image url="@icons/04n.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="120.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/03n.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="169.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/02n.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="220.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/02d.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="270.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/13d.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="322.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/04d.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="372.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/09n.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="414.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/04n.png" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </ImageView>
+                        <Text layoutX="72.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21.00: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="329.515625">
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Text>
                      </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -144,6 +173,75 @@
                               <NumberAxis side="LEFT" />
                            </yAxis>
                         </LineChart>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="72.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="122.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/03n.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="172.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04d.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="222.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/01d.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="272.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/13n.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="322.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/01d.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="372.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="412.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Text layoutX="72.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21.00: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="329.515625">
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Text>
                      </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
