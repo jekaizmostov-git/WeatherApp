@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="672.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jekaizmstov.controllers.MainController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Сейчас">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
+                     <children>
+                        <Text layoutX="3.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гродно, 13 февраля, 20:48" textAlignment="CENTER" wrappingWidth="501.4267578125">
+                           <font>
+                              <Font name="SansSerif Regular" size="25.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="168.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/02d.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="87.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="t : -3  °C, облачно" textAlignment="CENTER" wrappingWidth="333.10546875">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="139.0" layoutY="289.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="231.0" styleClass="button_clothe" text="Как одеться?" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Regular" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Text layoutX="70.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ощущается как: -7 С" wrappingWidth="183.10546875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="70.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Влажность: 65%" wrappingWidth="183.10546875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="278.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Давление: 1032ГПА" wrappingWidth="183.10546875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="278.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Скорость ветра: 10 м\с" wrappingWidth="183.10546875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Сегодня">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
+                     <children>
+                        <LineChart fx:id="chart" layoutX="30.0" layoutY="14.0" prefHeight="262.0" prefWidth="449.0" title="13 Февраля">
+                          <xAxis>
+                            <CategoryAxis fx:id="X_chart" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="Y_chart" side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="101.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="142.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="182.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="222.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="262.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="302.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="342.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="382.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/04n.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Завтра">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
+                     <children>
+                        <LineChart layoutX="30.0" layoutY="14.0" prefHeight="262.0" prefWidth="449.0" title="14 февраля">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="На 5 денй">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
+                     <children>
+                        <Text layoutX="71.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <right>
+      <VBox prefHeight="400.0" prefWidth="164.0" style="-fx-background-color: #4575D4;" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_active" text="Погода" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_unactive" text="Как одеться?" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="43.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_unactive" text="Параметры" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_unactive" text="Отправить отзыв" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="109.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_unactive" text="О разработчиках" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <top>
+      <AnchorPane prefHeight="26.0" prefWidth="672.0" style="-fx-background-color: #05296E;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="29.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WeatherApp_v5" />
+            <Button fx:id="closeButton" layoutX="644.0" layoutY="6.0" mnemonicParsing="false" onAction="#onCloseButtonClick" styleClass="button_close">
+               <padding>
+                  <Insets left="5.0" right="9.0" top="-4.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="624.0" layoutY="6.0" mnemonicParsing="false" styleClass="button_collapse">
+               <padding>
+                  <Insets left="5.0" right="9.0" top="-4.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="35.0" prefWidth="672.0" style="-fx-background-color: #05296E;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="34.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гродненский государственный колледж техники, технологий и дизайна" />
+            <Text fill="WHITE" layoutX="596.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ggkttid.com">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Text>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

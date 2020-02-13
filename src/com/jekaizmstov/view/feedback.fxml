@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="294.0" prefWidth="359.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="36.0" prefWidth="359.0" style="-fx-background-color: #05296E;" stylesheets="@css/style.css">
+         <children>
+            <Button fx:id="closeButton" layoutX="331.0" layoutY="12.0" mnemonicParsing="false"  styleClass="button_close">
+               <padding>
+                  <Insets left="5.0" right="9.0" top="-4.0" />
+               </padding>
+            </Button>
+            <Text fill="WHITE" layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WeatherApp_v5" />
+         </children>
+      </AnchorPane>
+      <Button layoutY="262.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="359.0" styleClass="button_update" text="Отправить" textFill="WHITE" />
+      <TextField layoutX="35.0" layoutY="63.0" prefHeight="25.0" prefWidth="289.0" promptText="Имя" />
+      <TextArea layoutX="35.0" layoutY="113.0" prefHeight="132.0" prefWidth="289.0" promptText="Расскажите об опыте пользования данным приложением..." />
+      <Text layoutX="35.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ваше имя:">
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="35.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отзыв:">
+         <font>
+            <Font name="SansSerif Regular" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
