@@ -77,7 +77,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
                      <children>
-                        <LineChart fx:id="chart" layoutX="30.0" layoutY="14.0" prefHeight="262.0" prefWidth="449.0" title="13 Февраля">
+                        <LineChart fx:id="chart" layoutX="30.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="449.0" title="13 Февраля">
                           <xAxis>
                             <CategoryAxis fx:id="X_chart" side="BOTTOM" />
                           </xAxis>
@@ -85,42 +85,42 @@
                             <NumberAxis fx:id="Y_chart" side="LEFT" />
                           </yAxis>
                         </LineChart>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="101.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="72.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/04n.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="142.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="120.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons/04n.png" />
+                              <Image url="@icons/03n.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="182.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="169.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons/04n.png" />
+                              <Image url="@icons/02n.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="222.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="220.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons/04n.png" />
+                              <Image url="@icons/02d.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="262.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="270.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons/04n.png" />
+                              <Image url="@icons/13d.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="302.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="322.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons/04n.png" />
+                              <Image url="@icons/04d.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="342.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="372.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons/04n.png" />
+                              <Image url="@icons/09n.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="382.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="414.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/04n.png" />
                            </image>
@@ -136,7 +136,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
                      <children>
-                        <LineChart layoutX="30.0" layoutY="14.0" prefHeight="262.0" prefWidth="449.0" title="14 февраля">
+                        <LineChart layoutX="30.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="449.0" title="14 февраля">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>

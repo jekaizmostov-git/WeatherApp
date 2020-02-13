@@ -11,6 +11,10 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import org.json.JSONObject;
 
 public class MainController {
@@ -29,13 +33,15 @@ public class MainController {
     private Button closeButton;
 
     @FXML
-    private LineChart<?, ?> chart;
+    private LineChart<?, ?> chart; //delete
 
     @FXML
-    private CategoryAxis X_chart;
+    private CategoryAxis X_chart; //delete
 
     @FXML
-    private NumberAxis Y_chart;
+    private NumberAxis Y_chart; //delete
+
+
 
 
     @FXML
@@ -61,17 +67,22 @@ public class MainController {
             e.printStackTrace();
         }
 
-//        XYChart.Series series = new XYChart.Series();
-//        series.getData().add(1,1);
-//        series.getData().add(2,2);
-//        series.getData().add(3,3);
-//        series.getData().add(4,4);
-//        series.getData().add(5,5);
-//        series.getData().add(6,6);
-//        series.getData().add(7,7);
-//        series.getData().add(8,8);
-//
-//        testLineChart.getData().add(series);
+        try{
+            XYChart.Series series = new XYChart.Series();
+            series.getData().add(new XYChart.Data("00.00", 5));
+            series.getData().add(new XYChart.Data("03.00", 3));
+            series.getData().add(new XYChart.Data("06.00", 2));
+            series.getData().add(new XYChart.Data("09.00", 5));
+            series.getData().add(new XYChart.Data("12.00", 6));
+            series.getData().add(new XYChart.Data("15.00", 3));
+            series.getData().add(new XYChart.Data("18.00", 1));
+            series.getData().add(new XYChart.Data("21.00", 2));
+            chart.getData().add(series);
+        }catch (Exception ex){
+            System.out.println(ex);
+        }
+
+
 
     }
 }
