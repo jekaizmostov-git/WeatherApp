@@ -1,11 +1,15 @@
 package com.jekaizmstov.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jekaizmstov.weather.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -15,6 +19,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.json.JSONObject;
 
 public class MainController {
@@ -22,6 +29,9 @@ public class MainController {
 //
 //    @FXML
 //    private LineChart<?, ?> testLineChart;
+
+    @FXML
+    private Button feedBackButton;
 
     @FXML
     private ResourceBundle resources;
@@ -85,5 +95,15 @@ public class MainController {
 
 
 
+    }
+
+    public void onFeedBackButtonClick(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../view/feedback.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 }

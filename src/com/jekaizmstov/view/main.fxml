@@ -429,7 +429,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_unactive" text="Отправить отзыв" textFill="WHITE">
+            <Button fx:id="feedBackButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" onAction="#onFeedBackButtonClick" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_unactive" text="Отправить отзыв" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="14.0" />
                </font>
