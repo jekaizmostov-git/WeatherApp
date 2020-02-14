@@ -61,12 +61,13 @@ public class MainController {
             TodayWeather todayWeather = new TodayWeather(apiFull);
             TomorrowWeather tomorrowWeather = new TomorrowWeather(apiFull);
             OnFiveDaysWeather onFiveDaysWeather = new OnFiveDaysWeather(apiFull);
-
-            onFiveDaysWeather.print();
+            System.out.println("WEATHER: "+weather);
+            todayWeather.print();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        //delete this section in future
         try{
             XYChart.Series series = new XYChart.Series();
             series.getData().add(new XYChart.Data("00.00", 5));

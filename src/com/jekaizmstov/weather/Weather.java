@@ -32,6 +32,7 @@ public class Weather {
         this.humidity = currentWether.getInt("humidity");
         this.pressure = currentWether.getInt("pressure");
         this.windSpeed = currentWindSpeed.getDouble("speed");
+        translate();
     }
 
     public Weather() throws Exception {
@@ -82,5 +83,19 @@ public class Weather {
 
     public String getDateText() {
         return dateText;
+    }
+
+    private void translate(){
+        switch (this.naturePhenomena){
+            case "overcast clouds": this.naturePhenomena = "пасмурно"; break;
+            case "broken clouds": this.naturePhenomena = "облачность"; break;
+            case "scattered clouds": this.naturePhenomena = "рассеяные облака"; break;
+            case "few clouds": this.naturePhenomena = "мало облаков"; break;
+            case "clear sky": this.naturePhenomena = "чистое небо"; break;
+            case "light rain": this.naturePhenomena = "местами небольшой дождь"; break;
+            case "moderate rain": this.naturePhenomena = "дождь"; break;
+            case "light snow": this.naturePhenomena = "местами небольшой снег"; break;
+            default: break;
+        }
     }
 }
