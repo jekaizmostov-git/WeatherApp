@@ -393,7 +393,7 @@
    <right>
       <VBox prefHeight="400.0" prefWidth="164.0" style="-fx-background-color: #4575D4;" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_active" text="Погода" textFill="WHITE">
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_active" text="Обновить" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="50.0" />
                </VBox.margin>
@@ -450,8 +450,21 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <VBox.margin>
+                  <Insets bottom="107.0" />
+               </VBox.margin>
             </Button>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="192.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="164.0" styleClass="button_menu_unactive" text="Выход" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="15.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </VBox>
    </right>

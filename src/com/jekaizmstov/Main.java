@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.sql.SQLException;
+
+import com.jekaizmstov.database.DBConnection;
 
 public class Main extends Application {
 
