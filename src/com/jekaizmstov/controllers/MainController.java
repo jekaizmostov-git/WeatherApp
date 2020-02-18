@@ -66,13 +66,15 @@ public class MainController {
             JSONObject apiFull = API.getWetherAPI();
 
             Weather weather = new Weather(apiForCurrent);
-            System.out.println(weather);
+          //  System.out.println(weather);
 
             TodayWeather todayWeather = new TodayWeather(apiFull);
             TomorrowWeather tomorrowWeather = new TomorrowWeather(apiFull);
             OnFiveDaysWeather onFiveDaysWeather = new OnFiveDaysWeather(apiFull);
-            System.out.println("WEATHER: "+weather);
-            todayWeather.print();
+
+          //  System.out.println("WEATHER: "+weather);
+          //  todayWeather.print();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

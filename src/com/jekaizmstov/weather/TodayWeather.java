@@ -48,4 +48,14 @@ public class TodayWeather {
             System.out.println(w);
         }
     }
+
+    public double getAvarageTemp(){
+        return list.stream().mapToDouble(w -> w.getTemp()).average().getAsDouble();
+    }
+
+    public boolean isRain(){
+         return   list.stream().
+                filter(w -> w.getNaturePhenomena().equalsIgnoreCase("дождь") ||
+                        w.getNaturePhenomena().equalsIgnoreCase("местами небольшой дождь")).count() != 0;
+    }
 }
