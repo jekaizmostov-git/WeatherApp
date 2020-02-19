@@ -14,6 +14,8 @@ import com.jekaizmstov.database.DBConnection;
 
 public class Main extends Application {
 
+    public static Stage stage = null;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("view/main.fxml"));
@@ -22,11 +24,11 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
+        this.stage = primaryStage;
     }
 
 
     public static void main(String[] args) {
-
         launch(args);
     }
 }

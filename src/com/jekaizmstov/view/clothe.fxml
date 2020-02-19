@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onDragDone="#parentDragDone" onMouseDragged="#parentOnMouseDragged" onMousePressed="#parentOnMousePressed" onMouseReleased="#parentOnMouseReleased" prefHeight="573.0" prefWidth="600.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jekaizmstov.controllers.ClotheController">
+   <children>
+      <ImageView fitHeight="142.0" fitWidth="201.0" layoutX="284.0" layoutY="385.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/shoes/0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="334.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/jackets/0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="134.0" fitWidth="113.0" layoutX="221.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/shirts/0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="221.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/pants/0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="142.0" fitWidth="201.0" layoutX="337.0" layoutY="235.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/socks/0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="142.0" fitWidth="153.0" layoutX="447.0" layoutY="85.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/scarfs/0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="142.0" fitWidth="153.0" layoutX="453.0" layoutY="235.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/umbrellas/0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="100.0" layoutX="364.0" layoutY="23.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../clothe/hats/0.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-9.0" layoutY="-4.0" prefHeight="36.0" prefWidth="612.0" style="-fx-background-color: #05296E;" stylesheets="@css/style.css">
+         <children>
+            <Button fx:id="closeButton" layoutX="575.0" layoutY="12.0" mnemonicParsing="false" onAction="#onCloseButtonClick" styleClass="button_close">
+               <padding>
+                  <Insets left="5.0" right="9.0" top="-4.0" />
+               </padding>
+            </Button>
+            <Text fill="WHITE" layoutX="14.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WeatherApp_v5. Как одеться?" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="25.0" layoutY="131.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" styleClass="button_menu_unactive" text="Сегодня" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="25.0" layoutY="174.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="172.0" styleClass="button_menu_unactive" text="Завтра" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="25.0" layoutY="422.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="25.0" prefWidth="172.0" styleClass="button_clothe" text="Назад" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Button>
+      <AnchorPane layoutX="-8.0" layoutY="538.0" prefHeight="35.0" prefWidth="612.0" style="-fx-background-color: #05296E;">
+         <children>
+            <Text fill="WHITE" layoutX="34.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гродненский государственный колледж техники, технологий и дизайна" />
+            <Text fill="WHITE" layoutX="502.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ggkttid.com">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text layoutX="25.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Примерный гардероб на 19 февраля" wrappingWidth="178.5078125">
+         <font>
+            <Font name="SansSerif Regular" size="16.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
