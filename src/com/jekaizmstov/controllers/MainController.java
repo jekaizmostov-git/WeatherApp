@@ -5,6 +5,7 @@ import java.net.*;
 import java.util.ResourceBundle;
 
 import com.jekaizmstov.Main;
+import com.jekaizmstov.database.DBConnection;
 import com.jekaizmstov.weather.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -80,6 +81,8 @@ public class MainController {
                 alert.showAndWait();
                 System.exit(0);
             }
+
+
             JSONObject apiForCurrent = API.getCurrentWetherAPI();
             JSONObject apiFull = API.getWetherAPI();
             Weather weather = new Weather(apiForCurrent);

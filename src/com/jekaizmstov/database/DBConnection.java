@@ -1,11 +1,9 @@
 package com.jekaizmstov.database;
 
+
 import java.io.Closeable;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DBConnection implements Closeable {
     private static final String URL = "jdbc:mysql://localhost:3306/weather_app?useSSL=false&allowPublicKeyRetrieval=true";
@@ -26,6 +24,21 @@ public class DBConnection implements Closeable {
         return dbConnection;
     }
 
+    public Statement getStatement() throws SQLException {
+        if (connection != null){
+            return  connection.createStatement();
+        }else{
+            return getConnection().getStatement();
+        }
+    }
+
+    public PreparedStatement getPreparedStatement(String query) throws SQLException {
+        if (connection != null){
+            return  connection.prepareStatement(query);
+        }else{
+            return getConnection().getPreparedStatement(query);
+        }
+    }
 
     @Override
     public void close() {

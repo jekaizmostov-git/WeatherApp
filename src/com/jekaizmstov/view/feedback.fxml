@@ -21,8 +21,8 @@
          </children>
       </AnchorPane>
       <Button fx:id="sendFeedBackButton" layoutY="262.0" mnemonicParsing="false" onAction="#onSendFeedBackButton" prefHeight="36.0" prefWidth="359.0" styleClass="button_update" text="Отправить" textFill="WHITE" />
-      <TextField layoutX="35.0" layoutY="63.0" prefHeight="25.0" prefWidth="289.0" promptText="Имя" />
-      <TextArea layoutX="35.0" layoutY="113.0" prefHeight="132.0" prefWidth="289.0" promptText="Расскажите об опыте пользования данным приложением..." />
+      <TextField fx:id="name" layoutX="35.0" layoutY="63.0" prefHeight="25.0" prefWidth="289.0" promptText="Имя" />
+      <TextArea fx:id="text" layoutX="35.0" layoutY="113.0" prefHeight="132.0" prefWidth="289.0" promptText="Расскажите об опыте пользования данным приложением..." />
       <Text layoutX="35.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ваше имя:">
          <font>
             <Font name="SansSerif Regular" size="12.0" />
