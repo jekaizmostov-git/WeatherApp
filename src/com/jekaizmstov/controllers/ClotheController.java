@@ -1,13 +1,17 @@
 package com.jekaizmstov.controllers;
 
 import com.jekaizmstov.Main;
+import com.jekaizmstov.database.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import java.sql.PreparedStatement;
 
 public class ClotheController {
     @FXML
@@ -15,6 +19,13 @@ public class ClotheController {
 
     @FXML
     private Button closeButton;
+
+
+    @FXML
+    void initialize() {
+
+
+    }
 
     @FXML
     private Button backButton;

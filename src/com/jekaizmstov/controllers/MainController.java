@@ -5,7 +5,6 @@ import java.net.*;
 import java.util.ResourceBundle;
 
 import com.jekaizmstov.Main;
-import com.jekaizmstov.database.DBConnection;
 import com.jekaizmstov.weather.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,13 +17,9 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -73,6 +68,13 @@ public class MainController {
         System.exit(0);
     }
 
+    public static JSONObject apiForCurrent;
+    public static JSONObject apiFull;
+    public static Weather weather;
+    public static TodayWeather todayWeather;
+    public static TomorrowWeather tomorrowWeather;
+    public static OnFiveDaysWeather onFiveDaysWeather;
+
     @FXML
     void initialize() {
         try {
@@ -83,14 +85,12 @@ public class MainController {
             }
 
 
-            JSONObject apiForCurrent = API.getCurrentWetherAPI();
-            JSONObject apiFull = API.getWetherAPI();
-            Weather weather = new Weather(apiForCurrent);
-            TodayWeather todayWeather = new TodayWeather(apiFull);
-            TomorrowWeather tomorrowWeather = new TomorrowWeather(apiFull);
-            OnFiveDaysWeather onFiveDaysWeather = new OnFiveDaysWeather(apiFull);
-
-
+            apiForCurrent = API.getCurrentWetherAPI();
+            apiFull = API.getWetherAPI();
+            this.weather = new Weather(apiForCurrent);
+            this.todayWeather = new TodayWeather(apiFull);
+            this.tomorrowWeather = new TomorrowWeather(apiFull);
+            this.onFiveDaysWeather = new OnFiveDaysWeather(apiFull);
 
 
         } catch (Exception e) {

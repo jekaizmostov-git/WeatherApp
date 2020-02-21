@@ -1,5 +1,6 @@
 package com.jekaizmstov;
 
+import com.jekaizmstov.weather.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import java.io.File;
 import java.sql.SQLException;
 
 import com.jekaizmstov.database.DBConnection;
+import org.json.JSONObject;
 
 public class Main extends Application {
 
@@ -30,7 +32,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-
         launch(args);
     }
 }
