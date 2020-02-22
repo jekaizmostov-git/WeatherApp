@@ -19,9 +19,9 @@ public class Test {
         try(DBConnection connection  = DBConnection.getConnection()){
             for (Clothe c: list){
                 c.getPathAndDescription(connection, "tables");
-              //  System.out.println(c.getTemp());
-             //   System.out.println(c);
-             //   System.out.println(c.getUrlForImage());
+                System.out.println(c.getTemp());
+                System.out.println(c);
+                System.out.println(c.getUrlForImage());
             }
         }catch (Exception ex){
             ex.printStackTrace(System.out);

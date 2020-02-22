@@ -95,9 +95,9 @@ public class MainController {
 
             System.out.println("Data get successfuly!");
 
-            todayWeather.print();
-            System.out.println("______");
-            System.out.println(todayWeather.isRain());
+//            todayWeather.print();
+//            System.out.println("______");
+//            System.out.println(todayWeather.getAvarageTemp());
         } catch (Exception e) {
             e.printStackTrace();
         }

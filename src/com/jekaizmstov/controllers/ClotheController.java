@@ -4,33 +4,84 @@ import com.jekaizmstov.Main;
 import com.jekaizmstov.clothese.*;
 import com.jekaizmstov.database.DBConnection;
 import com.jekaizmstov.weather.TodayWeather;
+import com.jekaizmstov.weather.TomorrowWeather;
 import com.jekaizmstov.weather.Weather;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.awt.*;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.SQLOutput;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.WeakHashMap;
 
 public class ClotheController {
     @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
     private AnchorPane parent;
+
+    @FXML
+    private ImageView shoes;
+
+    @FXML
+    private ImageView jacket;
+
+    @FXML
+    private ImageView shirt;
+
+    @FXML
+    private ImageView pant;
+
+    @FXML
+    private ImageView socks;
+
+    @FXML
+    private ImageView scarf;
+
+    @FXML
+    private ImageView umbrella;
+
+    @FXML
+    private ImageView hat;
 
     @FXML
     private Button closeButton;
 
+    @FXML
+    private Button todayCLotheButton;
+
+    @FXML
+    private Button tomorrowClotheButton;
+
+    @FXML
+    private Button backButton;
+
+    @FXML
+    private Text description;
+
     private List<Clothe> list;
-    private Umbrella umbrella;
+    private Umbrella umbrellaObject;
 
     private List<Clothe> getLook(TodayWeather weather){
         List<Clothe> list = new ArrayList<>();
@@ -51,29 +102,68 @@ public class ClotheController {
             alert.showAndWait();
             System.exit(0);
         }
-        this.umbrella = new Umbrella(MainController.todayWeather.isRain());
+       this.umbrellaObject = new Umbrella(weather.isRain());
+
 
         return list;
     }
 
     @FXML
     void initialize() {
-       list = getLook(MainController.tomorrowWeather);
-       try{
-           for (Clothe c : list){
-               System.out.println(c.getUrlForImage());
-               System.out.println(c.getDescription());
-           }
-           System.out.println(umbrella.getUrlForImage());
-       }catch (Exception ex){
+       setInf(MainController.todayWeather);
+    }
 
-       }
+    private void setInf(TodayWeather w){
+        list = getLook(w);
+
+        setImageAndToolTip(hat, list.get(0));
+        setImageAndToolTip(jacket, list.get(1));
+        setImageAndToolTip(pant, list.get(2));
+        setImageAndToolTip(scarf, list.get(3));
+        setImageAndToolTip(shirt, list.get(4));
+        setImageAndToolTip(shoes, list.get(5));
+        setImageAndToolTip(socks, list.get(6));
+        setImageAndToolTip(umbrella, umbrellaObject);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM");
+        if (w instanceof TomorrowWeather){
+            description.setText("Примерный мужской гардеров на "
+                    +LocalDateTime.now().plusDays(1).format(formatter) + "(завтра)");
+            return;
+        }
+        description.setText("Примерный мужской гардеров на "+
+                LocalDateTime.now().format(formatter)+ "(сегодня)");
+    }
+
+    private void setImageAndToolTip(ImageView iv, Clothe cl) {
+        try{
+            if (cl.getUrlForImage() != null)
+                iv.setImage(new Image(cl.getUrlForImage()));
+            Tooltip.install(iv, new Tooltip(cl.getDescription()));
+        }catch (Exception ex){
+            ex.printStackTrace(System.out);
+        }
+
+    }
+    private void setImageAndToolTip(ImageView iv, Umbrella um) {
+        try{
+            if (um.getUrlForImage() != null)
+                iv.setImage(new Image(um.getUrlForImage()));
+            Tooltip.install(iv, new Tooltip(um.getDescription()));
+        }catch (Exception ex){
+            ex.printStackTrace(System.out);
+        }
+    }
+
+    public void onTomorrowClotheClick(ActionEvent actionEvent) {
+        setInf(MainController.tomorrowWeather);
+    }
+
+    public void onTodayClotheClick(ActionEvent actionEvent) {
+       setInf(MainController.todayWeather);
     }
 
 
-
-    @FXML
-    private Button backButton;
     public void onCloseButtonClick(ActionEvent actionEvent) {
         System.exit(0);
     }
@@ -102,4 +192,6 @@ public class ClotheController {
     public void parentDragDone(DragEvent dragEvent) {
         MainController.clotheStage.setOpacity(1.0f);
     }
+
+
 }

@@ -12,4 +12,17 @@ public class Scarf extends Clothe{
     public void getPathAndDescription(DBConnection connection, String tableName) throws SQLException {
         super.getPathAndDescription(connection, "scarfs");
     }
+
+    public static void main(String[] args) {
+        Scarf hat = new Scarf(3.4);
+        System.out.println(hat.getTemp());
+        try(DBConnection connection = DBConnection.getConnection()){
+            hat.getPathAndDescription(connection,"scarfs");
+            System.out.println(hat.getTemp());
+            System.out.println(hat.getDescription());
+            System.out.println(hat.getPath());
+        }catch (Exception ex){
+            ex.printStackTrace(System.out);
+        }
+    }
 }

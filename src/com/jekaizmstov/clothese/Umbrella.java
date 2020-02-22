@@ -21,5 +21,9 @@ public class Umbrella{
         }
         return null;
     }
+
+    public String getDescription(){
+        return "Сегодня с большой вероятностью будет дождь, возьмите зонт, чтобы не промокнуть!";
+    }
 }
 

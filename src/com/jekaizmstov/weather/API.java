@@ -9,14 +9,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class API {
-    private static String yourCity = "Hrodna";
+    private static String yourCity = "Hrodna,BY";
+  //  private static String yourCity = "Bissau";
+
 
     public static void setCity(String city) {
         yourCity = city;
     }
 
-    private static final String URL_STRING_FOR_CURRENT_WETHER ="http://api.openweathermap.org/data/2.5/weather?q="+yourCity+",BY&units=metric&appid=8ac1008e95214c5edc42c9ec43e47239";
-    private static final String URL_STRING = "http://api.openweathermap.org/data/2.5/forecast?q="+yourCity+",BY&units=metric&appid=8ac1008e95214c5edc42c9ec43e47239";
+    private static final String URL_STRING_FOR_CURRENT_WETHER ="http://api.openweathermap.org/data/2.5/weather?q="+yourCity+"&units=metric&appid=8ac1008e95214c5edc42c9ec43e47239";
+    private static final String URL_STRING = "http://api.openweathermap.org/data/2.5/forecast?q="+yourCity+"&units=metric&appid=8ac1008e95214c5edc42c9ec43e47239";
 
     private static StringBuilder getAPI(String urlString) throws Exception{
         URL url = new URL(urlString);

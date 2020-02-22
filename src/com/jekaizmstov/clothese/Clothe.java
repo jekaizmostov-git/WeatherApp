@@ -86,6 +86,5 @@ public abstract class Clothe {
                 "description='" + description + '\'' +
                 ", temp=" + temp +
                 ", path='" + path + '\'' + file.toString();
-
     }
 }
