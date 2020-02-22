@@ -2,6 +2,8 @@ package com.jekaizmstov.clothese;
 
 import com.jekaizmstov.database.DBConnection;
 
+import java.io.File;
+import java.net.MalformedURLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +12,7 @@ public abstract class Clothe {
     String description;
     int temp;
     String path;
+    File file;
 
     public Clothe(double value,int round){
         this.temp = rounding(value, round);
@@ -22,7 +25,7 @@ public abstract class Clothe {
             return  (int)(Math.round(value) - (round + (int)Math.round(value) % round));
         }
     }
-    void getPathAndDescription(DBConnection connection, String tableName) throws SQLException {
+    public void getPathAndDescription(DBConnection connection, String tableName) throws SQLException {
         String query = "SELECT * FROM "+tableName+" WHERE temp=?;";
         PreparedStatement ps = connection.getPreparedStatement(query);
         ps.setInt(1, this.temp);
@@ -31,8 +34,16 @@ public abstract class Clothe {
         while (rs.next()){
             path = rs.getString("path");
             description = rs.getString("description");
+            file = new File(rs.getString("path"));
         }
 
+    }
+
+    public String getUrlForImage() throws MalformedURLException {
+        if (file != null){
+            return file.toURI().toURL().toString();
+        }
+        return null;
     }
 
     public static void main(String[] args) {
@@ -46,6 +57,10 @@ public abstract class Clothe {
             while (rs.next()){
                 System.out.println(rs.getString("path"));
                 System.out.println(rs.getString("description"));
+                File file = new File(rs.getString("path"));
+                System.out.println("File.exist - "+file.exists());
+                String urlForImage = file.toURI().toURL().toString();
+                System.out.println(urlForImage);
             }
         }catch (Exception ex){
             ex.printStackTrace(System.out);
@@ -70,7 +85,7 @@ public abstract class Clothe {
         return "Clothe{" +
                 "description='" + description + '\'' +
                 ", temp=" + temp +
-                ", path='" + path + '\'' +
-                '}';
+                ", path='" + path + '\'' + file.toString();
+
     }
 }

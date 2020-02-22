@@ -1,5 +1,25 @@
 package com.jekaizmstov.clothese;
 
-public class Umbrella {
- //I need to do it!!!
+import com.jekaizmstov.database.DBConnection;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.sql.SQLException;
+
+
+public class Umbrella{
+    File file;
+    public Umbrella(boolean flag){
+        if (flag){
+            file = new File("src/clothe/umbrellas/0.jpg");
+        }
+    }
+
+    public String getUrlForImage() throws MalformedURLException {
+        if (file != null){
+            return file.toURI().toURL().toString();
+        }
+        return null;
+    }
 }
+

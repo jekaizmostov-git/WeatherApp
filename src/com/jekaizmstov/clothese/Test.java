@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-        double temp = 7.5;
+        double temp = 4.75;
         List<Clothe> list = new ArrayList<>();
         list.add(new Hat(temp));
         list.add(new Jacket(temp));
@@ -19,8 +19,9 @@ public class Test {
         try(DBConnection connection  = DBConnection.getConnection()){
             for (Clothe c: list){
                 c.getPathAndDescription(connection, "tables");
-               // System.out.println(c.getTemp());
-                System.out.println(c);
+              //  System.out.println(c.getTemp());
+             //   System.out.println(c);
+             //   System.out.println(c.getUrlForImage());
             }
         }catch (Exception ex){
             ex.printStackTrace(System.out);

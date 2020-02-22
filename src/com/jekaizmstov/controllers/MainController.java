@@ -5,6 +5,7 @@ import java.net.*;
 import java.util.ResourceBundle;
 
 import com.jekaizmstov.Main;
+import com.jekaizmstov.clothese.Hat;
 import com.jekaizmstov.weather.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -92,7 +93,11 @@ public class MainController {
             this.tomorrowWeather = new TomorrowWeather(apiFull);
             this.onFiveDaysWeather = new OnFiveDaysWeather(apiFull);
 
+            System.out.println("Data get successfuly!");
 
+            todayWeather.print();
+            System.out.println("______");
+            System.out.println(todayWeather.isRain());
         } catch (Exception e) {
             e.printStackTrace();
         }
