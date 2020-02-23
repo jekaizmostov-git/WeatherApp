@@ -116,6 +116,15 @@ public class ClotheController {
     private void setInf(TodayWeather w){
         list = getLook(w);
 
+        hat.setImage(null);
+        jacket.setImage(null);
+        pant.setImage(null);
+        scarf.setImage(null);
+        shirt.setImage(null);
+        shoes.setImage(null);
+        socks.setImage(null);
+        umbrella.setImage(null);
+
         setImageAndToolTip(hat, list.get(0));
         setImageAndToolTip(jacket, list.get(1));
         setImageAndToolTip(pant, list.get(2));

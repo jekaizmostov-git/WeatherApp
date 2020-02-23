@@ -41,16 +41,11 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "CurrentWether{" +
-                ", dateText='" + dateText + '\'' +
-                "temp=" + temp +
-                ", fillsLike=" + fillsLike +
-                ", pressure=" + pressure +
-                ", humidity=" + humidity +
-                ", windSpeed=" + windSpeed +
-                ", naturePhenomena='" + naturePhenomena + '\'' +
-                ", icon='" + icon + '\'' +
-                '}';
+        return this.getDateText()+": Температура:"+this.getTemp()+" °C, "+this.getNaturePhenomena()+"," +
+                "\nощущается как: "+this.getFillsLike()+" °C," +
+                " скорость ветра:"+this.getWindSpeed()+" м/с, " +
+                "\nвлажность:"+this.getHumidity()+" %," +
+                " давление:"+this.getPressure()+" ГПА";
     }
 
     public double getTemp() {
@@ -95,6 +90,7 @@ public class Weather {
             case "light rain": this.naturePhenomena = "местами небольшой дождь"; break;
             case "moderate rain": this.naturePhenomena = "дождь"; break;
             case "light snow": this.naturePhenomena = "местами небольшой снег"; break;
+            case "snow": this.naturePhenomena = "снег"; break;
             default: break;
         }
     }

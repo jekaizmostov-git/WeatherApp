@@ -5,14 +5,17 @@ import org.json.JSONObject;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class TodayWeather {
+public class TodayWeather implements Iterable<Weather> {
     private static  final String KEY = "00:00";
 
+
+    public Weather getItem(int index){
+        if (index >= 0 && index < list.size())
+            return list.get(index);
+    return null;
+    }
 
     List<Weather> list = new ArrayList<Weather>();
 
@@ -57,5 +60,21 @@ public class TodayWeather {
          return   list.stream().
                 filter(w -> w.getNaturePhenomena().equalsIgnoreCase("дождь") ||
                         w.getNaturePhenomena().equalsIgnoreCase("местами небольшой дождь")).count() != 0;
+    }
+
+    @Override
+    public Iterator<Weather> iterator() {
+        return new Iterator<Weather>() {
+            int index = 0;
+            @Override
+            public boolean hasNext() {
+                return (list.size()>index)?true:false;
+            }
+
+            @Override
+            public Weather next() {
+                return list.get(index++);
+            }
+        };
     }
 }

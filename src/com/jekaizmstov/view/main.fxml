@@ -25,17 +25,17 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
                      <children>
-                        <Text layoutX="3.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гродно, 13 февраля, 20:48" textAlignment="CENTER" wrappingWidth="501.4267578125">
+                        <Text fx:id="currentTitleText" layoutX="3.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Гродно, 13 февраля, 20:48" textAlignment="CENTER" wrappingWidth="501.4267578125">
                            <font>
                               <Font name="SansSerif Regular" size="25.0" />
                            </font>
                         </Text>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="168.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="currentIcon" fitHeight="150.0" fitWidth="200.0" layoutX="168.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@icons/02d.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="87.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="t : -3  °C, облачно" textAlignment="CENTER" wrappingWidth="333.10546875">
+                        <Text fx:id="currentTempAndNP" layoutX="87.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="t : -3  °C, облачно" textAlignment="CENTER" wrappingWidth="333.10546875">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -48,22 +48,22 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Text layoutX="70.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ощущается как: -7 С" wrappingWidth="183.10546875">
+                        <Text fx:id="currentFeelsLikeText" layoutX="70.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ощущается как: -7 С" wrappingWidth="183.10546875">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <Text layoutX="70.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Влажность: 65%" wrappingWidth="183.10546875">
+                        <Text fx:id="currentHumidityText" layoutX="70.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Влажность: 65%" wrappingWidth="183.10546875">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <Text layoutX="278.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Давление: 1032ГПА" wrappingWidth="183.10546875">
+                        <Text fx:id="currentPressureText" layoutX="278.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Давление: 1032ГПА" wrappingWidth="183.10546875">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Text>
-                        <Text layoutX="278.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Скорость ветра: 10 м\с" wrappingWidth="183.10546875">
+                        <Text fx:id="curentWindSpeedText" layoutX="278.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Скорость ветра: 10 м\с" wrappingWidth="183.10546875">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -78,79 +78,55 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
                      <children>
-                        <LineChart fx:id="chart" layoutX="30.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="449.0" title="13 Февраля">
+                        <LineChart fx:id="todayLineChart" layoutX="30.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="449.0" title="13 Февраля">
                           <xAxis>
-                            <CategoryAxis fx:id="X_chart" side="BOTTOM" />
+                            <CategoryAxis fx:id="todayLineChart_X" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis fx:id="Y_chart" side="LEFT" />
+                            <NumberAxis fx:id="todayLineChart_Y" side="LEFT" />
                           </yAxis>
                         </LineChart>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="72.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/04n.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon1" fitHeight="40.0" fitWidth="43.0" layoutX="72.0" layoutY="252.0" onMouseClicked="#onTodayIcon1Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="120.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/03n.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon2" fitHeight="40.0" fitWidth="43.0" layoutX="120.0" layoutY="252.0" onMouseClicked="#onTodayIcon2Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="169.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/02n.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon3" fitHeight="40.0" fitWidth="43.0" layoutX="169.0" layoutY="252.0" onMouseClicked="#onTodayIcon3Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="220.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/02d.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon4" fitHeight="40.0" fitWidth="43.0" layoutX="220.0" layoutY="252.0" onMouseClicked="#onTodayIcon4Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="270.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/13d.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon5" fitHeight="40.0" fitWidth="43.0" layoutX="270.0" layoutY="252.0" onMouseClicked="#onTodayIcon5Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="322.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/04d.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon6" fitHeight="40.0" fitWidth="43.0" layoutX="322.0" layoutY="252.0" onMouseClicked="#onTodayIcon6Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="372.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/09n.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon7" fitHeight="40.0" fitWidth="43.0" layoutX="372.0" layoutY="252.0" onMouseClicked="#onTodayIcon7Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="414.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/04n.png" />
-                           </image>
+                        <ImageView fx:id="todayIcon8" fitHeight="40.0" fitWidth="43.0" layoutX="414.0" layoutY="252.0" onMouseClicked="#onTodayIcon8Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Text layoutX="72.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21.00: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="329.515625">
+                        <Text fx:id="todayDescription" layoutX="72.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21.00: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="329.515625">
                            <font>
                               <Font name="SansSerif Regular" size="14.0" />
                            </font>
@@ -166,79 +142,55 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
                      <children>
-                        <LineChart layoutX="30.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="449.0" title="14 февраля">
+                        <LineChart fx:id="tomorrowLineChart" layoutX="30.0" layoutY="14.0" legendVisible="false" prefHeight="262.0" prefWidth="449.0" title="14 февраля">
                            <xAxis>
-                              <CategoryAxis side="BOTTOM" />
+                              <CategoryAxis fx:id="tomorrowLineChart_X" side="BOTTOM" />
                            </xAxis>
                            <yAxis>
-                              <NumberAxis side="LEFT" />
+                              <NumberAxis fx:id="tomorrowLineChart_Y" side="LEFT" />
                            </yAxis>
                         </LineChart>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="72.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/04n.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon1" fitHeight="40.0" fitWidth="43.0" layoutX="72.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon1Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="122.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/03n.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon2" fitHeight="40.0" fitWidth="43.0" layoutX="122.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon2Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="172.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/04d.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon3" fitHeight="40.0" fitWidth="43.0" layoutX="172.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon3Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="222.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/01d.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon4" fitHeight="40.0" fitWidth="43.0" layoutX="222.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon4Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="272.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/13n.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon5" fitHeight="40.0" fitWidth="43.0" layoutX="272.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon5Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="322.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/01d.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon6" fitHeight="40.0" fitWidth="43.0" layoutX="322.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon6Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="372.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/04n.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon7" fitHeight="40.0" fitWidth="43.0" layoutX="372.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon7Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="412.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@icons/04n.png" />
-                           </image>
+                        <ImageView fx:id="tomorrowIcon8" fitHeight="40.0" fitWidth="43.0" layoutX="412.0" layoutY="252.0" onMouseClicked="#onTomorrowIcon8Click" pickOnBounds="true" preserveRatio="true">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ImageView>
-                        <Text layoutX="72.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21.00: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="329.515625">
+                        <Text fx:id="tomorrowDescription" layoutX="72.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21.00: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="329.515625">
                            <font>
                               <Font name="SansSerif Regular" size="14.0" />
                            </font>
@@ -393,7 +345,7 @@
    <right>
       <VBox prefHeight="400.0" prefWidth="164.0" style="-fx-background-color: #4575D4;" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_active" text="Обновить" textFill="WHITE">
+            <Button fx:id="updateButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onUpdateButtonClick" prefHeight="33.0" prefWidth="164.0" styleClass="button_menu_active" text="Обновить" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="50.0" />
                </VBox.margin>

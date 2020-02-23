@@ -10,11 +10,16 @@ import java.net.URL;
 
 public class API {
     private static String yourCity = "Hrodna,BY";
-  //  private static String yourCity = "Bissau";
+    //private static String yourCity = "Bissau";
+   // private static String yourCity = "Moscow";
 
 
     public static void setCity(String city) {
         yourCity = city;
+    }
+
+    public static String getYourCity() {
+        return yourCity;
     }
 
     private static final String URL_STRING_FOR_CURRENT_WETHER ="http://api.openweathermap.org/data/2.5/weather?q="+yourCity+"&units=metric&appid=8ac1008e95214c5edc42c9ec43e47239";
