@@ -9,8 +9,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class API {
-    private static String yourCity = "Hrodna,BY";
-    //private static String yourCity = "Bissau";
+   // private static String yourCity = "Hrodna,BY";
+    private static String yourCity = "Bissau";
    // private static String yourCity = "Moscow";
 
 

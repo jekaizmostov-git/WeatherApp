@@ -6,7 +6,6 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
@@ -204,139 +203,60 @@
             </Tab>
             <Tab text="На 5 дней">
                <content>
-                  <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ccc;">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="510.0" style="-fx-background-color: #DEDEDE;">
-                           <children>
-                              <Text layoutX="27.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13 февраля">
-                                 <font>
-                                    <Font name="SansSerif Bold" size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ночь: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/13d.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/02d.png" />
-                                 </image>
-                              </ImageView>
-                              <Text layoutX="27.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13 февраля">
-                                 <font>
-                                    <Font name="SansSerif Bold" size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ночь: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/13d.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/02d.png" />
-                                 </image>
-                              </ImageView>
-                              <Text layoutX="27.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13 февраля">
-                                 <font>
-                                    <Font name="SansSerif Bold" size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ночь: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/13d.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/02d.png" />
-                                 </image>
-                              </ImageView>
-                              <Text layoutX="27.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13 февраля">
-                                 <font>
-                                    <Font name="SansSerif Bold" size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ночь: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/13d.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/02d.png" />
-                                 </image>
-                              </ImageView>
-                              <Text layoutX="27.0" layoutY="598.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13 февраля">
-                                 <font>
-                                    <Font name="SansSerif Bold" size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="621.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="125.0" layoutY="681.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ночь: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="358.87109375">
-                                 <font>
-                                    <Font name="SansSerif Regular" size="14.0" />
-                                 </font>
-                              </Text>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="659.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/13d.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="43.0" layoutY="599.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@icons/02d.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </ScrollPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #DEDEDE;">
+                     <children>
+                        <Text fx:id="titleForFive" layoutX="260.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13 февраля">
+                           <font>
+                              <Font name="SansSerif Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textDayForFive" layoutX="193.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="День: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА adf" wrappingWidth="298.87109375">
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textNightForFive" layoutX="191.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ночь: Температура: +5 °С, небольшой дождь, ощущается как: +3 °С, скорость ветра 4 м/с, влажность: 55%, давление: 1202 ГПА" wrappingWidth="302.87109375">
+                           <font>
+                              <Font name="SansSerif Regular" size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fx:id="iconNightForFive" fitHeight="67.0" fitWidth="74.0" layoutX="120.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/13d.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="iconDayForFive" fitHeight="67.0" fitWidth="74.0" layoutX="120.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/02d.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="firstButton" layoutX="14.0" layoutY="72.0" mnemonicParsing="false" onAction="#onFirstClick" styleClass="button_menu_unactive" text="13 февраля" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="secondButton" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#onSecondClick" styleClass="button_menu_unactive" text="13 февраля" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="thirdButton" layoutX="14.0" layoutY="172.0" mnemonicParsing="false" onAction="#onThirdClick" styleClass="button_menu_unactive" text="13 февраля" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="fourthButton" layoutX="14.0" layoutY="222.0" mnemonicParsing="false" onAction="#onFourthClick" styleClass="button_menu_unactive" text="13 февраля" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="fivethButton" layoutX="14.0" layoutY="272.0" mnemonicParsing="false" onAction="#onFivethClick" styleClass="button_menu_unactive" text="13 февраля" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
                </content>
             </Tab>
         </tabs>

@@ -25,7 +25,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -145,8 +147,35 @@ public class MainController {
     @FXML
     private Button collapseButton;
 
+    @FXML
+    private Text titleForFive;
 
+    @FXML
+    private Text textDayForFive;
 
+    @FXML
+    private Text textNightForFive;
+
+    @FXML
+    private ImageView iconNightForFive;
+
+    @FXML
+    private ImageView iconDayForFive;
+
+    @FXML
+    private Button firstButton;
+
+    @FXML
+    private Button secondButton;
+
+    @FXML
+    private Button thirdButton;
+
+    @FXML
+    private Button fourthButton;
+
+    @FXML
+    private Button fivethButton;
 
 
 
@@ -179,12 +208,13 @@ public class MainController {
         this.tomorrowWeather = new TomorrowWeather(apiFull);
         this.onFiveDaysWeather = new OnFiveDaysWeather(apiFull);
 
+        onFiveDaysWeather.print();
 
         //set content for currentWeather
         File fileForCurrentIcon = new File("src\\com\\jekaizmstov\\view\\icons\\"+weather.getIcon()+".png");
         currentIcon.setImage(new Image(fileForCurrentIcon.toURI().toURL().toString()));
 
-        formatter = DateTimeFormatter.ofPattern("d-MMMM HH:mm");
+        formatter = DateTimeFormatter.ofPattern("d MMMM HH:mm");
         currentTitleText.setText(API.getYourCity() + " "+ LocalDateTime.now().format(formatter));
         currentTempAndNP.setText("t: "+weather.getTemp()+" °C, "+weather.getNaturePhenomena());
         currentFeelsLikeText.setText("Ощущается как: "+weather.getFillsLike()+" °C");
@@ -192,7 +222,7 @@ public class MainController {
         currentHumidityText.setText("Влажность: "+weather.getHumidity()+"%");
         currentPressureText.setText("Давление: "+weather.getPressure()+" ГПА");
 
-        formatter = DateTimeFormatter.ofPattern("d-MMMM");
+        formatter = DateTimeFormatter.ofPattern("d MMMM");
         //set content for today weather
         todayLineChart.setTitle(API.getYourCity() + " "+ LocalDateTime.now().format(formatter));
         todayDescription.setText(todayWeather.getItem(0).toString());
@@ -218,6 +248,20 @@ public class MainController {
         setIcon(tomorrowIcon7, tomorrowWeather.getItem(6));
         setIcon(tomorrowIcon8, tomorrowWeather.getItem(7));
         drawLineChart(tomorrowWeather);
+
+
+        //fiveDay
+        firstButton.setText(LocalDateTime.now().plusDays(0).format(formatter));
+        secondButton.setText(LocalDateTime.now().plusDays(1).format(formatter));
+        thirdButton.setText(LocalDateTime.now().plusDays(2).format(formatter));
+        fourthButton.setText(LocalDateTime.now().plusDays(3).format(formatter));
+        fivethButton.setText(LocalDateTime.now().plusDays(4).format(formatter));
+
+        setInfOnFiveDay(0, 0, 1);
+
+    }
+
+    private void onFiveDayInf(){
 
     }
 
@@ -394,5 +438,42 @@ public class MainController {
         tomorrowDescription.setText(tomorrowWeather.getItem(7).toString());
     }
 
+    private void setInfOnFiveDay(int countDay, int x, int y) throws MalformedURLException {
+        formatter = DateTimeFormatter.ofPattern("d MMMM");
+        titleForFive.setText(LocalDateTime.now().plusDays(countDay).format(formatter));
+        textDayForFive.setText("Ночью: " + onFiveDaysWeather.getItem(x).toString().substring(7)    );
+        textNightForFive.setText("Днем: " +onFiveDaysWeather.getItem(y).toString().substring(7)    );
+        File fileForCurrentIcon = new File("src\\com\\jekaizmstov\\view\\icons\\"+weather.getIcon()+".png");
+        iconNightForFive.setImage(new Image(
+                new File("src\\com\\jekaizmstov\\view\\icons\\"+
+                        onFiveDaysWeather.getItem(x).getIcon()+".png").
+                        toURI().toURL().toString()));
+        iconDayForFive.setImage(new Image(
+                new File("src\\com\\jekaizmstov\\view\\icons\\"+
+                        onFiveDaysWeather.getItem(y).getIcon()+".png").
+                        toURI().toURL().toString()));
+    }
 
+
+    public void onFirstClick(ActionEvent actionEvent) throws MalformedURLException {
+        setInfOnFiveDay(0, 0, 1);
+    }
+
+
+    public void onSecondClick(ActionEvent actionEvent) throws MalformedURLException {
+        setInfOnFiveDay(1, 2, 3);
+    }
+
+    public void onThirdClick(ActionEvent actionEvent) throws MalformedURLException {
+        setInfOnFiveDay(2, 4, 5);
+    }
+
+    public void onFourthClick(ActionEvent actionEvent) throws MalformedURLException{
+        setInfOnFiveDay(3, 6, 7);
+    }
+
+    public void onFivethClick(ActionEvent actionEvent) throws MalformedURLException {
+        setInfOnFiveDay(4, 8, 9);
+    }
 }
+

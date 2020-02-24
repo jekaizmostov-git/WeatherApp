@@ -6,9 +6,10 @@ import org.json.JSONObject;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class OnFiveDaysWeather {
+public class OnFiveDaysWeather implements Iterable<Weather> {
     private int[] sequence = {1,5,9,13,17,21,25,29,33,37};
     List<Weather> wetherList = new ArrayList<>();
 
@@ -37,7 +38,29 @@ public class OnFiveDaysWeather {
             }else{
                 time = "Средняя температура днем ";
             }
-            System.out.println(time + wetherList.get(i));
+            System.out.println(time + wetherList.get(i).toString());
         }
+    }
+
+    @Override
+    public Iterator<Weather> iterator() {
+        return new Iterator<Weather>() {
+            int index = 0;
+            @Override
+            public boolean hasNext() {
+                return (wetherList.size()>index)?true:false;
+            }
+
+            @Override
+            public Weather next() {
+                return wetherList.get(index++);
+            }
+        };
+    }
+
+    public Weather getItem(int index){
+        if (index >= 0 && index < wetherList.size())
+            return wetherList.get(index);
+        return null;
     }
 }
